@@ -3595,11 +3595,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ugur\\Desktop\\Task\\Task.csproj",
+      "projectUniqueName": "C:\\Users\\Ugur\\Desktop\\proekt\\Task\\Task.csproj",
       "projectName": "Task",
-      "projectPath": "C:\\Users\\Ugur\\Desktop\\Task\\Task.csproj",
+      "projectPath": "C:\\Users\\Ugur\\Desktop\\proekt\\Task\\Task.csproj",
       "packagesPath": "C:\\Users\\Ugur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ugur\\Desktop\\Task\\obj\\",
+      "outputPath": "C:\\Users\\Ugur\\Desktop\\proekt\\Task\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ugur\\AppData\\Roaming\\NuGet\\NuGet.Config",

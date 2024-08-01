@@ -140,7 +140,8 @@ namespace Task.Controllers
             var containerName = "profile-images";
             var blobContainerClient = _blobServiceClient.GetBlobContainerClient(containerName);
             await blobContainerClient.CreateIfNotExistsAsync();
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            
+            var fileName = file.FileName;
             var blobClient = blobContainerClient.GetBlobClient(fileName);
             using (var stream = file.OpenReadStream())
             {
@@ -154,6 +155,14 @@ namespace Task.Controllers
                 return NotFound("User not found.");
             }
 
+            if (!string.IsNullOrEmpty(user.AvatarUrl))
+            {
+                var oldBlobClient = blobContainerClient.GetBlobClient(new Uri(user.AvatarUrl).Segments.Last());
+                if (await oldBlobClient.ExistsAsync())
+                {
+                    await oldBlobClient.DeleteAsync();
+                }
+            }
             user.AvatarUrl = avatarUrl;
             await _dbContext.SaveChangesAsync();
 
